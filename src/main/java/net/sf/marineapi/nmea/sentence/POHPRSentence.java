@@ -21,7 +21,7 @@
 package net.sf.marineapi.nmea.sentence;
 
 
-import net.sf.marineapi.nmea.util.BINSCalibrationStatus;
+import net.sf.marineapi.nmea.util.BinsCalibrationStatus;
 import net.sf.marineapi.nmea.util.Time;
 
 /**
@@ -49,7 +49,7 @@ public interface POHPRSentence extends Sentence {
 
     String getResolveStatusRaw();
 
-    BINSCalibrationStatus getResolveStatus();
+    BinsCalibrationStatus getResolveStatus();
 
     void setHeadingAzimuth(double headingAzimuth);
 
@@ -59,7 +59,7 @@ public interface POHPRSentence extends Sentence {
 
     void setResolveStatusFromRaw(String resolveStatusRaw);
 
-    void setResolveStatus(BINSCalibrationStatus resolveStatus);
+    void setResolveStatus(BinsCalibrationStatus resolveStatus);
 
 
     void setObservationTime(Time t);

@@ -5,33 +5,33 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BINSCalibrationStatusTest {
-    BINSCalibrationStatus status;
+class BinsCalibrationStatusTest {
+    BinsCalibrationStatus status;
 
     @BeforeEach
     void setUp() {
-        status= BINSCalibrationStatus.RELIABLE;
+        status= BinsCalibrationStatus.RELIABLE;
     }
 
     @Test
     void fromStringRAW() {
-        status=BINSCalibrationStatus.fromStringRAW("B");
+        status= BinsCalibrationStatus.fromStringRAW("B");
         assertEquals("RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE",status.toString());
     }
 
     @Test
     void testToStringRAW() {
-        assertEquals("A", BINSCalibrationStatus.toStringRAW(status));
+        assertEquals("A", BinsCalibrationStatus.toStringRAW(status));
 
     }
 
     @Test
     void values() {
-        assertEquals(4,BINSCalibrationStatus.values().length);
+        assertEquals(4, BinsCalibrationStatus.values().length);
     }
 
     @Test
     void valueOf() {
-        assertEquals("RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE", BINSCalibrationStatus.RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE.toString());
+        assertEquals("RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE", BinsCalibrationStatus.RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE.toString());
     }
 }

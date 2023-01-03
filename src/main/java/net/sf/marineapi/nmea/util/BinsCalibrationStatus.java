@@ -8,7 +8,7 @@ import lombok.NonNull;
  * • V – решение не получено;
  * • K – идет процесс автоматической калибровки.
  */
-public enum BINSCalibrationStatus {
+public enum BinsCalibrationStatus {
     /**
      * A
      */
@@ -27,10 +27,10 @@ public enum BINSCalibrationStatus {
      */
     AUTOMATIC_CALIBRATION_IN_PROGRESS;
 
-        public static String toStringRAW(@NonNull BINSCalibrationStatus status) {
+        public static String toStringRAW(@NonNull BinsCalibrationStatus status) {
 
             String converted;
-            if (status == BINSCalibrationStatus.RELIABLE) {
+            if (status == BinsCalibrationStatus.RELIABLE) {
                 converted = "A";
             } else if (status == RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE) {
                 converted = "B";
@@ -50,8 +50,8 @@ public enum BINSCalibrationStatus {
      * • K – идет процесс автоматической калибровки.
      * @return
      */
-        public static BINSCalibrationStatus fromStringRAW(@NonNull String stringValue) {
-            BINSCalibrationStatus converted;
+        public static BinsCalibrationStatus fromStringRAW(@NonNull String stringValue) {
+            BinsCalibrationStatus converted;
             if (stringValue.equals("A")) {
                 converted = RELIABLE;
             } else if (stringValue.equals("B")) {
@@ -59,9 +59,21 @@ public enum BINSCalibrationStatus {
             } else if (stringValue.equals("K")) {
                 converted = AUTOMATIC_CALIBRATION_IN_PROGRESS;
             } else {
-                converted=BINSCalibrationStatus.RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE;
+                converted= BinsCalibrationStatus.RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE;
             }
             return converted;
         }
 
+    public static boolean isValidRaw(String rawValue) {
+        boolean valid = rawValue.length() == 1;
+
+        if(! (rawValue.equals("A")
+                || rawValue.equals("B")
+                || rawValue.equals("K")
+                || rawValue.equals("V"))){
+            valid=false;
+        }
+
+        return valid;
     }
+}

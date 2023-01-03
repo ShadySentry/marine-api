@@ -24,30 +24,43 @@ import lombok.extern.slf4j.Slf4j;
 import net.sf.marineapi.nmea.sentence.POHPRSentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
-import net.sf.marineapi.nmea.util.BINSCalibrationStatus;
+import net.sf.marineapi.nmea.util.BinsCalibrationStatus;
+import net.sf.marineapi.nmea.util.BinsNavigationTaskStatus;
 import net.sf.marineapi.nmea.util.Time;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 /**
  * HPR sentence parser.
  *
  * @author ShadySentry
  * @see POHPRSentence
+ * $POHPR,163828.715,10.05,179.17,-10.01,B*1E
  */
 @Slf4j
 class POHPRParser extends SentenceParser implements POHPRSentence {
-    //    private static double HEADING_AZIMUTH;
-//    private static double TILT_TO_STARBOARD;
-//    private static double TRIM_HEAD_IS_BOTTOM;
-//    private static double RESOLVE_STATUS;
+    /**
+     *hhmmss.ss – время обсервации (UTC)
+     */
     private static final int OBSERVATION_TIME_UTC = 0;
+    /**
+     * x.x – курс (азимут) в градусах
+     */
     private static final int HEADING_AZIMUTH = 1;
+    /**
+     * x.x – крен в градусах (±180,  «–» – на правый борт)
+     */
     private static final int TILT_TO_STARBOARD = 2;
+    /**
+     * x.x – дифферент в градусах (±90,  «–» – нос внизу)
+     */
     private static final int TRIM_HEAD_IS_BOTTOM = 3;
+    /**
+     * а – статус:
+     *      • А – данные достоверны;
+     *      • В – есть решение, достоверность не подтверждена;
+     *      • V – решение не получено;
+     *      • K – идет процесс автоматической калибровки.
+     */
     private static final int RESOLVE_STATUS = 4;
-//"$POHPR,163828.715,10.05,179.17,-10.01,B*1E"
 
     /**
      * Creates a new instance of BOD parser.
@@ -104,8 +117,13 @@ class POHPRParser extends SentenceParser implements POHPRSentence {
     }
 
     @Override
-    public BINSCalibrationStatus getResolveStatus() {
-        return BINSCalibrationStatus.fromStringRAW(getStringValue(RESOLVE_STATUS));
+    public BinsCalibrationStatus getResolveStatus() {
+        String value = getStringValue(RESOLVE_STATUS);
+        if (!BinsCalibrationStatus.isValidRaw(value)) {
+            throw new DataNotAvailableException("BinsNavigationTaskStatus format mismatch in POPMP sentence. value -\""
+                    + value + "\" in class" + this.getClass().getName());
+        }
+        return BinsCalibrationStatus.fromStringRAW(value);
     }
 
     @Override
@@ -137,8 +155,8 @@ class POHPRParser extends SentenceParser implements POHPRSentence {
     }
 
     @Override
-    public void setResolveStatus(BINSCalibrationStatus resolveStatus) {
-        setStringValue(RESOLVE_STATUS, BINSCalibrationStatus.toStringRAW(resolveStatus));
+    public void setResolveStatus(BinsCalibrationStatus resolveStatus) {
+        setStringValue(RESOLVE_STATUS, BinsCalibrationStatus.toStringRAW(resolveStatus));
     }
 
     @Override

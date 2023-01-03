@@ -1,12 +1,9 @@
 package net.sf.marineapi.nmea.parser;
 
-import net.sf.marineapi.nmea.util.BINSCalibrationStatus;
+import net.sf.marineapi.nmea.util.BinsCalibrationStatus;
 import net.sf.marineapi.nmea.util.Time;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Locale;
 
 import static org.junit.Assert.*;
 
@@ -64,7 +61,7 @@ public class POHPRParserTest {
 
     @Test
     public void testGetResolveStatus() {
-        assertEquals(BINSCalibrationStatus.RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE,
+        assertEquals(BinsCalibrationStatus.RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE,
                 pohpr.getResolveStatus());
     }
 
@@ -100,18 +97,18 @@ public class POHPRParserTest {
     @Test
     public void testSetTrimHeadIsBottom() {
         double trim = 90.00;
-        pohpr.setTiltToStarboard(trim);
+        pohpr.setTrimHeadIsBottom(trim);
         assertEquals(trim, pohpr.getTrimHeadIsBottom(), 0.001);
 
         trim = -90.00;
-        pohpr.setTiltToStarboard(trim);
+        pohpr.setTrimHeadIsBottom(trim);
         assertEquals(trim, pohpr.getTrimHeadIsBottom(), 0.001);
     }
 
     @Test
     public void testSetTrimHeadIsBottomGreater() {
         double trim = 90.01;
-        pohpr.setTiltToStarboard(trim);
+        pohpr.setTrimHeadIsBottom(trim);
         assertNotEquals(trim, pohpr.getTrimHeadIsBottom(), 0.001);
     }
 
@@ -124,7 +121,7 @@ public class POHPRParserTest {
 
     @Test
     public void testSetResolveStatusFromRaw() {
-        BINSCalibrationStatus status = BINSCalibrationStatus.AUTOMATIC_CALIBRATION_IN_PROGRESS;
+        BinsCalibrationStatus status = BinsCalibrationStatus.AUTOMATIC_CALIBRATION_IN_PROGRESS;
         String statusRaw = "K";
         pohpr.setResolveStatusFromRaw(statusRaw);
         assertEquals(statusRaw, pohpr.getResolveStatusRaw().toString());
@@ -132,7 +129,7 @@ public class POHPRParserTest {
 
     @Test
     public void setResolveStatusFromRawWrongLength() {
-        String statusRaw = BINSCalibrationStatus.RESOLVE_NOT_CALCULATED.toString();
+        String statusRaw = BinsCalibrationStatus.RESOLVE_NOT_CALCULATED.toString();
         pohpr.setResolveStatusFromRaw(statusRaw);
         DataNotAvailableException exception = assertThrows(DataNotAvailableException.class, () -> {
                     pohpr.getResolveStatusRaw();
@@ -142,7 +139,7 @@ public class POHPRParserTest {
 
     @Test
     public void testSetResolveStatus() {
-        BINSCalibrationStatus status = BINSCalibrationStatus.AUTOMATIC_CALIBRATION_IN_PROGRESS;
+        BinsCalibrationStatus status = BinsCalibrationStatus.AUTOMATIC_CALIBRATION_IN_PROGRESS;
         pohpr.setResolveStatus(status);
         assertEquals(status, pohpr.getResolveStatus());
     }
