@@ -178,6 +178,8 @@ public enum TalkerId {
 	OS,
 	/** Proprietary Code */
 	P,
+	/** custom devices **/
+	PO,
 	/** QZSS regional GPS augmentation system (Japan) */
 	QZ,
 	/** Radar and/or Radar Plotting */
@@ -275,7 +277,7 @@ public enum TalkerId {
 		}
 
 		String tid = "";
-		if (nmea.startsWith("$P")) {
+		if (nmea.startsWith("$P") && !nmea.startsWith("$PO")) {
 			tid = "P";
 		} else {
 			tid = nmea.substring(1, 3);

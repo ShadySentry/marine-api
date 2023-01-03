@@ -68,6 +68,8 @@ public enum SentenceId {
     HDM,
     /** Vessel heading in degrees true */
     HDT,
+    /** angle and dimension measurement from BINS **/
+    HPR,
     /** Heading/Track control command */
     HTC,
     /** Heading/Track control data */
@@ -84,6 +86,8 @@ public enum SentenceId {
     MWV,
     /** Own ship data */
     OSD,
+    /** precision of positions calculation made by Arsenal BINS **/
+    PMP,
     /** Recommended minimum navigation information */
     RMB,
     /** Recommended minimum specific GPS/TRANSIT data */
@@ -169,7 +173,7 @@ public enum SentenceId {
         }
 
         String id = null;
-        if (nmea.startsWith("$P")) {
+        if (nmea.startsWith("$P") && !nmea.startsWith("$PO")) {
             id = nmea.substring(2, nmea.indexOf(','));
         } else {
             id = nmea.substring(3, nmea.indexOf(','));

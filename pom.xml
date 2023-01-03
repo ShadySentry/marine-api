@@ -65,31 +65,31 @@ along with Java Marine API. If not, see <http://www.gnu.org/licenses />.
         </developer>
     </developers>
 
-    <scm>
-        <connection>scm:git:git@github.com:ktuukkan/marine-api.git</connection>
-        <developerConnection>scm:git:git@github.com:ktuukkan/marine-api.git
-        </developerConnection>
-        <url>git@github.com:ktuukkan/marine-api.git</url>
-    </scm>
+<!--    <scm>-->
+<!--        <connection>scm:git:git@github.com:ktuukkan/marine-api.git</connection>-->
+<!--        <developerConnection>scm:git:git@github.com:ktuukkan/marine-api.git-->
+<!--        </developerConnection>-->
+<!--        <url>git@github.com:ktuukkan/marine-api.git</url>-->
+<!--    </scm>-->
 
-    <distributionManagement>
-        <repository>
-            <id>sonatype-nexus-staging</id>
-            <name>Sonatype Staging Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2
-            </url>
-        </repository>
-        <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>sonatype-nexus-staging</id>-->
+<!--            <name>Sonatype Staging Repository</name>-->
+<!--            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2-->
+<!--            </url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>sonatype-nexus-snapshots</id>-->
+<!--            <name>Sonatype Nexus Snapshots</name>-->
+<!--            <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
 
-    <issueManagement>
-        <system>Github</system>
-        <url>https://github.com/ktuukkan/marine-api/issues</url>
-    </issueManagement>
+<!--    <issueManagement>-->
+<!--        <system>Github</system>-->
+<!--        <url>https://github.com/ktuukkan/marine-api/issues</url>-->
+<!--    </issueManagement>-->
 
     <dependencies>
         <dependency>
@@ -104,6 +104,35 @@ along with Java Marine API. If not, see <http://www.gnu.org/licenses />.
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.purejavacomm</groupId>
+            <artifactId>purejavacomm</artifactId>
+            <version>1.0.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
