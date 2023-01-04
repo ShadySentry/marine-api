@@ -12,22 +12,27 @@ public enum BinsCalibrationStatus {
     /**
      * A
      */
-        RELIABLE,
+        RELIABLE('A'),
     /**
      * B
      */
-        RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE,
+        RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE('B'),
     /**
      * V
      */
-        RESOLVE_NOT_CALCULATED,
+        RESOLVE_NOT_CALCULATED('V'),
 
     /**
      * K
      */
-    AUTOMATIC_CALIBRATION_IN_PROGRESS;
+    AUTOMATIC_CALIBRATION_IN_PROGRESS('K');
 
-        public static String toStringRAW(@NonNull BinsCalibrationStatus status) {
+    private char ch;
+    BinsCalibrationStatus(char ch) {
+        this.ch=ch;
+    }
+
+    public static String toStringRAW(@NonNull BinsCalibrationStatus status) {
 
             String converted;
             if (status == BinsCalibrationStatus.RELIABLE) {
@@ -75,5 +80,24 @@ public enum BinsCalibrationStatus {
         }
 
         return valid;
+    }
+
+    public char toChar() {
+        return ch;
+    }
+
+    /**
+     * Get the enum corresponding to specified char.
+     *
+     * @param ch Char indicator for unit
+     * @return Units enum
+     */
+    public static BinsCalibrationStatus valueOf(char ch) {
+        for (BinsCalibrationStatus status : values()) {
+            if (status.toChar() == ch) {
+                return status;
+            }
+        }
+        return valueOf(String.valueOf(ch));
     }
 }
