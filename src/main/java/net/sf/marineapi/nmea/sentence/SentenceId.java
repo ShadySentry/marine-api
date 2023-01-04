@@ -36,6 +36,8 @@ public enum SentenceId {
     APB,
     /** Bearing Origin to Destination */
     BOD,
+    /** Bins coordinates in manual mode */
+    ORM,
     /** Current */
     CUR,
     /** Depth of water below transducer; in meters, feet and fathoms */
@@ -74,6 +76,8 @@ public enum SentenceId {
     HTC,
     /** Heading/Track control data */
     HTD,
+    /** Bins calibration */
+    LIB,
     /** Relative and absolute humidity with dew point */
     MHU,
     /** Barometric pressure in inches of mercury and bars. */
