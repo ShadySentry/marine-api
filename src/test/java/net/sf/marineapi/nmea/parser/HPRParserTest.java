@@ -7,19 +7,19 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class POHPRParserTest {
+public class HPRParserTest {
 
     public static final String EXAMPLE = "$POHPR,163828.715,10.05,179.17,-10.01,B*1E";
 
-    private POHPRParser pohpr;
-    private POHPRParser empty;
+    private HPRParser pohpr;
+    private HPRParser empty;
 
 
     @Before
     public void setUp() throws Exception {
         try {
-            empty = new POHPRParser();
-            pohpr = new POHPRParser(EXAMPLE);
+            empty = new HPRParser();
+            pohpr = new HPRParser(EXAMPLE);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

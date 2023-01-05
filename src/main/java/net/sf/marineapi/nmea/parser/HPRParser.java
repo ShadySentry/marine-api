@@ -25,7 +25,6 @@ import net.sf.marineapi.nmea.sentence.POHPRSentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
 import net.sf.marineapi.nmea.util.BinsCalibrationStatus;
-import net.sf.marineapi.nmea.util.BinsNavigationTaskStatus;
 import net.sf.marineapi.nmea.util.Time;
 
 /**
@@ -36,7 +35,7 @@ import net.sf.marineapi.nmea.util.Time;
  * $POHPR,163828.715,10.05,179.17,-10.01,B*1E
  */
 @Slf4j
-class POHPRParser extends SentenceParser implements POHPRSentence {
+public class HPRParser extends SentenceParser implements POHPRSentence {
     /**
      *hhmmss.ss – время обсервации (UTC)
      */
@@ -69,7 +68,7 @@ class POHPRParser extends SentenceParser implements POHPRSentence {
      * @throws IllegalArgumentException If specified String is invalid or does
      *                                  not contain a POHPR sentence.
      */
-    public POHPRParser(String nmea) {
+    public HPRParser(String nmea) {
         super(nmea, SentenceId.HPR);
     }
 
@@ -78,14 +77,14 @@ class POHPRParser extends SentenceParser implements POHPRSentence {
      *
      * @param talker TalkerId to set (PO)
      */
-    public POHPRParser(TalkerId talker) {
+    public HPRParser(TalkerId talker) {
         super(talker, SentenceId.HPR, 5);
     }
 
     /**
      * Creates POHPR parser with empty sentence
      */
-    public POHPRParser() {
+    public HPRParser() {
         super(TalkerId.PO, SentenceId.HPR, 5);
     }
 

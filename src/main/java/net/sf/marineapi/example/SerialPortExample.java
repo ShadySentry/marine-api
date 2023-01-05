@@ -20,8 +20,6 @@
  */
 package net.sf.marineapi.example;
 
-//import gnu.io.CommPortIdentifier;
-//import gnu.io.SerialPort;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -109,7 +107,7 @@ public class SerialPortExample implements SentenceListener {
 
 					SerialPort sp = (SerialPort) id.open("SerialExample", 30);
 
-					sp.setSerialPortParams(9600, SerialPort.DATABITS_8,
+					sp.setSerialPortParams(115200, SerialPort.DATABITS_8,
 							SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
 					sp.enableReceiveTimeout(1000);
 					sp.enableReceiveThreshold(0);

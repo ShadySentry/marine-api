@@ -337,6 +337,19 @@ public class SentenceFactory {
 		registerParser(tempParsers, "MWD", MWDParser.class);
 		registerParser(tempParsers, "DTA", DTAParser.class);
 		registerParser(tempParsers, "DTB", DTBParser.class);
+		/**
+		 * BINS parsers registration
+		 */
+		registerParser(tempParsers,"HPR",HPRParser.class);
+		registerParser(tempParsers,"PMP",PMPParser.class);
+		registerParser(tempParsers,"ORM",ORMParser.class);
+		registerParser(tempParsers,"SET",SETParser.class);
+		registerParser(tempParsers,"LIB",LIBParser.class);
+
+		/**
+		 * Meteo parsers registration
+		 */
+		// TODO: 05.01.2023 add parsers for meteo unit
 		parsers = tempParsers;
 	}
 }
