@@ -35,6 +35,9 @@ public final class SentenceValidator {
 	private static final Pattern reNoChecksum = Pattern.compile(
 		"^[$|!]{1}[A-Z0-9]{3,10}[,][\\x20-\\x7F]*(\\r|\\n|\\r\\n|\\n\\r){0,1}$");
 
+	private static final Pattern reBinsChecksum = Pattern.compile(
+			"^[$|!]{1}[A-Z0-9]{3,10}[\\x20-\\x7F]*(\\r|\\n|\\r\\n|\\n\\r){0,1}$");
+
 	private SentenceValidator() {
 	}
 
@@ -68,11 +71,19 @@ public final class SentenceValidator {
 			return false;
 		}
 
+		if (isNotParameterized(nmea)){
+			return reBinsChecksum.matcher(nmea).matches();
+		}
+
 		if (Checksum.index(nmea) == nmea.length()) {
 			return reNoChecksum.matcher(nmea).matches();
 		}
 
 		return reChecksum.matcher(nmea).matches();
+	}
+
+	public static boolean isNotParameterized(String nmea){
+		return nmea.indexOf(',')==-1;
 	}
 
 	/**

@@ -345,6 +345,7 @@ public class SentenceFactory {
 		registerParser(tempParsers,"ORM",ORMParser.class);
 		registerParser(tempParsers,"SET",SETParser.class);
 		registerParser(tempParsers,"LIB",LIBParser.class);
+		registerParser(tempParsers,"RUN",RUNParser.class);
 
 		/**
 		 * Meteo parsers registration

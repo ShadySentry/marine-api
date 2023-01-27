@@ -30,122 +30,242 @@ package net.sf.marineapi.nmea.sentence;
  */
 public enum SentenceId {
 
-    /** Raymarine SeaTalk sentence ({@code $STALK}). */
+    /**
+     * Raymarine SeaTalk sentence ({@code $STALK}).
+     */
     ALK,
-    /** Autopilot sentence "B"; xte, bearings and heading toward destination */
+    /**
+     * Autopilot sentence "B"; xte, bearings and heading toward destination
+     */
     APB,
-    /** Bearing Origin to Destination */
+    /**
+     * Bearing Origin to Destination
+     */
     BOD,
-    /** Bins coordinates in manual mode */
+    /**
+     * Bins coordinates in manual mode
+     */
     ORM,
-    /** Current */
+    /**
+     * Current
+     */
     CUR,
-    /** Depth of water below transducer; in meters, feet and fathoms */
+    /**
+     * Depth of water below transducer; in meters, feet and fathoms
+     */
     DBT,
-    /** Depth of water below transducer; in meters. */
+    /**
+     * Depth of water below transducer; in meters.
+     */
     DPT,
-    /** Boreal GasFinder data stream A (GasFinder2 and GasFinderMC) */
+    /**
+     * Boreal GasFinder data stream A (GasFinder2 and GasFinderMC)
+     */
     DTA,
-    /** Boreal GasFinder data stream B (GasFinder2 only) */
+    /**
+     * Boreal GasFinder data stream B (GasFinder2 only)
+     */
     DTB,
-    /** Datum reference. */
+    /**
+     * Datum reference.
+     */
     DTM,
-    /** GNSS satellite fault detection (RAIM) */
+    /**
+     * GNSS satellite fault detection (RAIM)
+     */
     GBS,
-    /** Global Positioning System fix data */
+    /**
+     * Global Positioning System fix data
+     */
     GGA,
-    /** Geographic position (latitude/longitude) */
+    /**
+     * Geographic position (latitude/longitude)
+     */
     GLL,
-    /** GNSS fix data (GPS, GLONASS and future constellations). */
+    /**
+     * GNSS fix data (GPS, GLONASS and future constellations).
+     */
     GNS,
-    /** Dilution of precision (DOP) of GPS fix and active satellites */
+    /**
+     * Dilution of precision (DOP) of GPS fix and active satellites
+     */
     GSA,
-    /** Detailed satellite data */
+    /**
+     * Detailed satellite data
+     */
     GSV,
-    /** Pseudorange Noise Statistics */
+    /**
+     * Pseudorange Noise Statistics
+     */
     GST,
-    /** Vessel heading in degrees with magnetic variation and deviation. */
+    /**
+     * Vessel heading in degrees with magnetic variation and deviation.
+     */
     HDG,
-    /** Vessel heading in degrees with respect to true north. */
+    /**
+     * Vessel heading in degrees with respect to true north.
+     */
     HDM,
-    /** Vessel heading in degrees true */
+    /**
+     * Vessel heading in degrees true
+     */
     HDT,
-    /** angle and dimension measurement from BINS **/
+    /**
+     * angle and dimension measurement from BINS
+     **/
     HPR,
-    /** Heading/Track control command */
+    /**
+     * Heading/Track control command
+     */
     HTC,
-    /** Heading/Track control data */
+    /**
+     * Heading/Track control data
+     */
     HTD,
-    /** Bins calibration */
+    /**
+     * Bins calibration
+     */
     LIB,
-    /** Relative and absolute humidity with dew point */
+    /**
+     * Relative and absolute humidity with dew point
+     */
     MHU,
-    /** Barometric pressure in inches of mercury and bars. */
+    /**
+     * Barometric pressure in inches of mercury and bars.
+     */
     MMB,
-    /** Air temperature in degrees centigrade (Celsius). */
+    /**
+     * Air temperature in degrees centigrade (Celsius).
+     */
     MTA,
-    /** Water temperature in degrees centigrade (Celsius). */
+    /**
+     * Water temperature in degrees centigrade (Celsius).
+     */
     MTW,
-    /** Wind speed and angle */
+    /**
+     * Wind speed and angle
+     */
     MWV,
-    /** Own ship data */
+    /**
+     * Own ship data
+     */
     OSD,
-    /** precision of positions calculation made by Arsenal BINS **/
+    /**
+     * precision of positions calculation made by Arsenal BINS
+     **/
     PMP,
-    /** Recommended minimum navigation information */
+    /**
+     * running marker for Arsenal BINS
+     **/
+    RUN,
+    /**
+     * Recommended minimum navigation information
+     */
     RMB,
-    /** Recommended minimum specific GPS/TRANSIT data */
+    /**
+     * Recommended minimum specific GPS/TRANSIT data
+     */
     RMC,
-    /** Rate of Turn */
+    /**
+     * Rate of Turn
+     */
     ROT,
-    /** Revolutions measured from engine or shaft. */
+    /**
+     * Revolutions measured from engine or shaft.
+     */
     RPM,
-    /** Rudder angle, measured in degrees */
+    /**
+     * Rudder angle, measured in degrees
+     */
     RSA,
-    /** Radar system data */
+    /**
+     * Radar system data
+     */
     RSD,
-    /** Route data and waypoint list */
+    /**
+     * Route data and waypoint list
+     */
     RTE,
-    /** Target Label */
+    /**
+     * Target Label
+     */
     TLB,
-    /** Tracked target Longitude Latitude*/
+    /**
+     * Tracked target Longitude Latitude
+     */
     TLL,
-    /** Tracked target */
+    /**
+     * Tracked target
+     */
     TTM,
-    /** Text message */
+    /**
+     * Text message
+     */
     TXT,
-    /** Proprietary NMEA messages for u-blox positioning receivers. */
+    /**
+     * Proprietary NMEA messages for u-blox positioning receivers.
+     */
     UBX,
-    /** Dual ground/water speed and stern ground/water speed. */
+    /**
+     * Dual ground/water speed and stern ground/water speed.
+     */
     VBW,
-    /** AIS - Received data from other vessels */
+    /**
+     * AIS - Received data from other vessels
+     */
     VDM,
-    /** AIS - Own vessel data */
+    /**
+     * AIS - Own vessel data
+     */
     VDO,
-    /** Set and drift, direction and speed of current. */
+    /**
+     * Set and drift, direction and speed of current.
+     */
     VDR,
-    /** Distance traveled through water, cumulative and since reset. */
+    /**
+     * Distance traveled through water, cumulative and since reset.
+     */
     VLW,
-    /** Track made good and ground speed */
+    /**
+     * Track made good and ground speed
+     */
     VTG,
-    /** Water speed and heading */
+    /**
+     * Water speed and heading
+     */
     VHW,
-    /** Waypoint location (latitude/longitude) */
+    /**
+     * Waypoint location (latitude/longitude)
+     */
     WPL,
-    /** Relative Wind Speed and Angle */
+    /**
+     * Relative Wind Speed and Angle
+     */
     VWR,
-    /** True Wind Speed and Angle */
+    /**
+     * True Wind Speed and Angle
+     */
     VWT,
-    /** Transducer measurements (sensor data) */
+    /**
+     * Transducer measurements (sensor data)
+     */
     XDR,
-    /** Cross-track error, measured */
+    /**
+     * Cross-track error, measured
+     */
     XTE,
-    /** Meteorological Composite  */
+    /**
+     * Meteorological Composite
+     */
     MDA,
-    /** Wind speed and direction */
+    /**
+     * Wind speed and direction
+     */
     MWD,
-    /** UTC time and date with local time zone offset */
-	ZDA;
+    /**
+     * UTC time and date with local time zone offset
+     */
+    ZDA;
 
     /**
      * Parses the sentence id from specified sentence String and returns a
@@ -154,7 +274,7 @@ public enum SentenceId {
      * @param nmea Sentence String
      * @return SentenceId enum
      * @throws IllegalArgumentException If specified String is not valid
-     *             sentence
+     *                                  sentence
      */
     public static SentenceId parse(String nmea) {
         String sid = parseStr(nmea);
@@ -168,7 +288,7 @@ public enum SentenceId {
      * @param nmea Sentence String
      * @return Sentence Id, e.g. "GGA" or "GLL"
      * @throws IllegalArgumentException If specified String is not recognized as
-     *             NMEA sentence
+     *                                  NMEA sentence
      */
     public static String parseStr(String nmea) {
 
@@ -179,6 +299,13 @@ public enum SentenceId {
         String id = null;
         if (nmea.startsWith("$P") && !nmea.startsWith("$PO")) {
             id = nmea.substring(2, nmea.indexOf(','));
+        } else if (nmea.indexOf(',') == -1) {                   //used to process PORUN BINS sentence
+            int alternativeIndex =nmea.indexOf('*');
+            if(alternativeIndex == -1){
+                id = nmea.substring(3);
+            }else {
+                id = nmea.substring(3, alternativeIndex);
+            }
         } else {
             id = nmea.substring(3, nmea.indexOf(','));
         }
