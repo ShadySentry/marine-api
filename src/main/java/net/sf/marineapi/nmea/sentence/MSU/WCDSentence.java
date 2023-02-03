@@ -36,12 +36,12 @@ import net.sf.marineapi.nmea.util.Time;
 public interface WCDSentence extends Sentence {
 
     double getWindDirection();
-    double setWindDirection();
+    void setWindDirection(double windDirection);
 
     double getWindSpeed();
-    double setWindSpeed();
+    void setWindSpeed(double windSpeed);
 
     double getAirTemperature();
-    double setAirTemperature();
+    void setAirTemperature(double airTemperature);
 
 }

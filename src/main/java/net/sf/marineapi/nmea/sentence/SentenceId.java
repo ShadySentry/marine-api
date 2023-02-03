@@ -265,7 +265,14 @@ public enum SentenceId {
     /**
      * UTC time and date with local time zone offset
      */
-    ZDA;
+    ZDA,
+    ESD,
+    FSD,
+    SDS,
+    /**
+     * MS-U weather information (wind direction, wind speed, temperature)
+     */
+    WCD;
 
     /**
      * Parses the sentence id from specified sentence String and returns a
@@ -297,13 +304,13 @@ public enum SentenceId {
         }
 
         String id = null;
-        if (nmea.startsWith("$P") && !nmea.startsWith("$PO")) {
+        if (nmea.startsWith("$P") && (!nmea.startsWith("$PO") && !nmea.startsWith("$PM"))) {
             id = nmea.substring(2, nmea.indexOf(','));
         } else if (nmea.indexOf(',') == -1) {                   //used to process PORUN BINS sentence
-            int alternativeIndex =nmea.indexOf('*');
-            if(alternativeIndex == -1){
+            int alternativeIndex = nmea.indexOf('*');
+            if (alternativeIndex == -1) {
                 id = nmea.substring(3);
-            }else {
+            } else {
                 id = nmea.substring(3, alternativeIndex);
             }
         } else {

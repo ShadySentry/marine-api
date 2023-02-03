@@ -28,6 +28,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import net.sf.marineapi.nmea.parser.MSU.WCDParser;
 import net.sf.marineapi.nmea.sentence.Sentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
@@ -348,8 +349,10 @@ public class SentenceFactory {
 		registerParser(tempParsers,"RUN",RUNParser.class);
 
 		/**
-		 * Meteo parsers registration
+		 * MSU Meteo parsers registration
 		 */
+
+		registerParser(tempParsers, "WCD",WCDParser.class);
 		// TODO: 05.01.2023 add parsers for meteo unit
 		parsers = tempParsers;
 	}

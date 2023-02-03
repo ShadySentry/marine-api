@@ -62,7 +62,7 @@ public class HPRParser extends SentenceParser implements POHPRSentence {
     private static final int RESOLVE_STATUS = 4;
 
     /**
-     * Creates a new instance of BOD parser.
+     * Creates a new instance of POHPR parser.
      *
      * @param nmea POHPR sentence String
      * @throws IllegalArgumentException If specified String is invalid or does
