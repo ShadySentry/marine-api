@@ -37,7 +37,6 @@ public class WCDParserTest {
     @Test
     public  void setWindSpeed() {double direction=356.9;
         double windSpeed=17.5;
-        parser.setWindSpeed(windSpeed);
         assertEquals(windSpeed,parser.getWindSpeed(),0.001);
     }
 

@@ -132,6 +132,12 @@ along with Java Marine API. If not, see <http://www.gnu.org/licenses />.
             <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>22.0.0</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

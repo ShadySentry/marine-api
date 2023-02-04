@@ -1,31 +1,30 @@
 package net.sf.marineapi.nmea.parser.MSU;
 
-import lombok.extern.slf4j.Slf4j;
 import net.sf.marineapi.nmea.parser.SentenceParser;
 import net.sf.marineapi.nmea.sentence.MSU.WCDSentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
 
 public class WCDParser extends SentenceParser implements WCDSentence {
-    int WIND_DIRECTION = 0;
-    int WIND_SPEED = 1;
-    int AIR_TEMPERATURE = 2;
+    private static final int WIND_DIRECTION = 0;
+    private static final int WIND_SPEED = 1;
+    private static final int AIR_TEMPERATURE = 2;
 
     public WCDParser(String nmea) {
         super(nmea, SentenceId.WCD.toString());
     }
 
     /**
-     * Creates POHPR parser with empty sentence.
+     * Creates WCD parser with empty sentence.
      *
-     * @param talker TalkerId to set (PO)
+     * @param talker TalkerId to set (PM)
      */
     public WCDParser(TalkerId talker) {
         super(talker, SentenceId.WCD.toString(), 3);
     }
 
     /**
-     * Creates POHPR parser with empty sentence
+     * Creates PMWCD parser with empty sentence
      */
     public WCDParser() {
         super(TalkerId.PM, SentenceId.WCD.toString(), 3);
@@ -50,8 +49,8 @@ public class WCDParser extends SentenceParser implements WCDSentence {
 
     @Override
     public void setWindSpeed(double windSpeed) {
-        if(windSpeed>=0){
-            setDoubleValue(WIND_SPEED,windSpeed);
+        if (windSpeed >= 0) {
+            setDoubleValue(WIND_SPEED, windSpeed);
         }
 
     }
@@ -63,7 +62,7 @@ public class WCDParser extends SentenceParser implements WCDSentence {
 
     @Override
     public void setAirTemperature(double airTemperature) {
-        if(airTemperature>=-40.0 && airTemperature<=55.0){
+        if (airTemperature >= -40.0 && airTemperature <= 55.0) {
             setDoubleValue(AIR_TEMPERATURE, airTemperature);
         }
     }
