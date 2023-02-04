@@ -20,7 +20,7 @@ public class FSDParserTest {
     }
 
     @Test
-    public void checkSize(){
+    public void fieldCountTest(){
         assertEquals(7,parser.getFieldCount());
     }
 
