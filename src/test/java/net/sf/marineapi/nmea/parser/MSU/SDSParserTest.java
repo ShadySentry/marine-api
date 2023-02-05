@@ -22,8 +22,6 @@ public class SDSParserTest {
     public void fieldCountTest(){
         assertEquals(4,parser.getFieldCount());
     }
-
-    // TODO: 04.02.2023 implement all
     @Test
     public void getOperatingPostureCommandState() {
         MsuFunctionSwitchCommand expected = MsuFunctionSwitchCommand.REQUEST_IS_PRESENT;
