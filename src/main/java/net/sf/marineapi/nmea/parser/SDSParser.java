@@ -29,7 +29,7 @@ public class SDSParser extends SentenceParser implements SDSSentence {
     private static final int OPERATING_POSTURE = 0;
     private static final int TRANSPORTING_POSTURE = 1;
     private static final int HEATING_ON = 2;
-    private static final int HEATING_OFF = 3;;
+    private static final int HEATING_OFF = 3;
 
 
     public SDSParser(String nmea) {
