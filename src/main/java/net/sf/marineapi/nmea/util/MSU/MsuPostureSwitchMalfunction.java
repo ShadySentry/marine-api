@@ -6,7 +6,7 @@ package net.sf.marineapi.nmea.util.MSU;
  * <p>  •	1 – ошибка перехода в рабочее положение;
  * <p>  •	1 – ошибка перехода в транспортное положение;
  */
-public enum MsuPostureSwitchMalfunction {
+public enum MsuPostureSwitchMalfunction implements MsuMalfunction{
     NORMAL(0),
     OPERATING_MODE_SWITCH_MALFUNCTION(1),
     TRANSPORT_MODE_SWITCH_MALFUNCTION(2);
@@ -39,5 +39,10 @@ public enum MsuPostureSwitchMalfunction {
 
     public int toInt() {
         return value;
+    }
+
+    @Override
+    public boolean isNormal() {
+        return this==NORMAL;
     }
 }

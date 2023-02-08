@@ -5,7 +5,7 @@ package net.sf.marineapi.nmea.util.MSU;
  * <p>  •	0 – норма;
  * <p>  •	1 – ошибка приема;
  */
-public enum MsuDataExchangeMalfunction {
+public enum MsuDataExchangeMalfunction implements MsuMalfunction{
     NORMAL(0),
     MALFUNCTION(1);
 
@@ -34,5 +34,10 @@ public enum MsuDataExchangeMalfunction {
 
     public int toInt() {
         return value;
+    }
+
+    @Override
+    public boolean isNormal() {
+        return this==NORMAL;
     }
 }

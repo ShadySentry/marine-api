@@ -5,7 +5,7 @@ package net.sf.marineapi.nmea.util.MSU;
  * <p>  •	0 – норма;
  * <p>  •	1 – отказ;
  */
-public enum MsuWindSpeedSensorMalfunction {
+public enum MsuWindSpeedSensorMalfunction implements MsuMalfunction{
     NORMAL(0),
     MALFUNCTION(1);
 
@@ -34,5 +34,10 @@ public enum MsuWindSpeedSensorMalfunction {
 
     public int toInt() {
         return value;
+    }
+
+    @Override
+    public boolean isNormal() {
+        return this==NORMAL;
     }
 }

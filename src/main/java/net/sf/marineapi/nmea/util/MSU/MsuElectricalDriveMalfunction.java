@@ -5,7 +5,7 @@ package net.sf.marineapi.nmea.util.MSU;
  * <p>  •	0 – норма;
  * <p>  •	1 – отказ;
  */
-public enum MsuElectricalDriveMalfunction {
+public enum MsuElectricalDriveMalfunction implements MsuMalfunction{
     NORMAL(0),
     MALFUNCTION(1);
 
@@ -34,5 +34,10 @@ public enum MsuElectricalDriveMalfunction {
 
     public int toInt() {
         return value;
+    }
+
+    @Override
+    public boolean isNormal() {
+        return this==NORMAL;
     }
 }
