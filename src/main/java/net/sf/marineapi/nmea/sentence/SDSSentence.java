@@ -18,7 +18,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Java Marine API. If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.marineapi.nmea.sentence.MSU;
+package net.sf.marineapi.nmea.sentence;
 
 
 import net.sf.marineapi.nmea.sentence.Sentence;

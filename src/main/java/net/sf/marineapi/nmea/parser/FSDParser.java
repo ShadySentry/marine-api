@@ -1,7 +1,6 @@
-package net.sf.marineapi.nmea.parser.MSU;
+package net.sf.marineapi.nmea.parser;
 
-import net.sf.marineapi.nmea.parser.SentenceParser;
-import net.sf.marineapi.nmea.sentence.MSU.FSDSentence;
+import net.sf.marineapi.nmea.sentence.FSDSentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
 import net.sf.marineapi.nmea.util.MSU.*;
@@ -18,19 +17,19 @@ public class FSDParser extends SentenceParser implements FSDSentence {
 
 
     public FSDParser(String nmea) {
-        super(nmea, SentenceId.FSD.toString());
+        super(nmea, SentenceId.FSD);
     }
 
-    protected FSDParser(String nmea, String type) {
+    public FSDParser(String nmea, String type) {
         super(nmea, type);
     }
 
-    protected FSDParser(TalkerId talker) {
-        super(talker, SentenceId.FSD.toString(), 7);
+    public FSDParser(TalkerId talker) {
+        super(talker, SentenceId.FSD, 7);
     }
 
     public FSDParser() {
-        super(TalkerId.PM, SentenceId.FSD.toString(), 7);
+        super(TalkerId.PM, SentenceId.FSD, 7);
     }
 
 

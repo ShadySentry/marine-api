@@ -1,5 +1,6 @@
 package net.sf.marineapi.nmea.parser.MSU;
 
+import net.sf.marineapi.nmea.parser.WCDParser;
 import org.junit.Before;
 import org.junit.Test;
 

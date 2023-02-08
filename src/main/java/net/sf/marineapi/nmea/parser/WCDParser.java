@@ -1,7 +1,6 @@
-package net.sf.marineapi.nmea.parser.MSU;
+package net.sf.marineapi.nmea.parser;
 
-import net.sf.marineapi.nmea.parser.SentenceParser;
-import net.sf.marineapi.nmea.sentence.MSU.WCDSentence;
+import net.sf.marineapi.nmea.sentence.WCDSentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
 
@@ -11,7 +10,7 @@ public class WCDParser extends SentenceParser implements WCDSentence {
     private static final int AIR_TEMPERATURE = 2;
 
     public WCDParser(String nmea) {
-        super(nmea, SentenceId.WCD.toString());
+        super(nmea, SentenceId.WCD);
     }
 
     /**
@@ -20,14 +19,14 @@ public class WCDParser extends SentenceParser implements WCDSentence {
      * @param talker TalkerId to set (PM)
      */
     public WCDParser(TalkerId talker) {
-        super(talker, SentenceId.WCD.toString(), 3);
+        super(talker, SentenceId.WCD, 3);
     }
 
     /**
      * Creates PMWCD parser with empty sentence
      */
     public WCDParser() {
-        super(TalkerId.PM, SentenceId.WCD.toString(), 3);
+        super(TalkerId.PM, SentenceId.WCD, 3);
     }
 
     @Override

@@ -20,10 +20,6 @@
  */
 package net.sf.marineapi.nmea.parser;
 
-import net.sf.marineapi.nmea.parser.MSU.ESDParser;
-import net.sf.marineapi.nmea.parser.MSU.FSDParser;
-import net.sf.marineapi.nmea.parser.MSU.SDSParser;
-import net.sf.marineapi.nmea.parser.MSU.WCDParser;
 import net.sf.marineapi.nmea.sentence.Sentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;

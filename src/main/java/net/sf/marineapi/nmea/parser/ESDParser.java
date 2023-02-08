@@ -1,8 +1,6 @@
-package net.sf.marineapi.nmea.parser.MSU;
+package net.sf.marineapi.nmea.parser;
 
-import net.sf.marineapi.nmea.parser.SentenceParser;
-import net.sf.marineapi.nmea.sentence.MSU.ESDSentence;
-import net.sf.marineapi.nmea.sentence.MSU.FSDSentence;
+import net.sf.marineapi.nmea.sentence.ESDSentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
 import net.sf.marineapi.nmea.util.MSU.*;
@@ -51,19 +49,19 @@ public class ESDParser extends SentenceParser implements ESDSentence {
 
 
     public ESDParser(String nmea) {
-        super(nmea, SentenceId.ESD.toString());
+        super(nmea, SentenceId.ESD);
     }
 
-    protected ESDParser(String nmea, String type) {
+    public ESDParser(String nmea, String type) {
         super(nmea, type);
     }
 
-    protected ESDParser(TalkerId talker) {
-        super(talker, SentenceId.ESD.toString(), 7);
+    public ESDParser(TalkerId talker) {
+        super(talker, SentenceId.ESD, 7);
     }
 
     public ESDParser() {
-        super(TalkerId.PM, SentenceId.ESD.toString(), 7);
+        super(TalkerId.PM, SentenceId.ESD, 7);
     }
 
     @Override

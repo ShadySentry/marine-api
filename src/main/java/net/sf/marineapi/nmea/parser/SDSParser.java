@@ -1,8 +1,6 @@
-package net.sf.marineapi.nmea.parser.MSU;
+package net.sf.marineapi.nmea.parser;
 
-import net.sf.marineapi.nmea.parser.SentenceParser;
-import net.sf.marineapi.nmea.sentence.MSU.ESDSentence;
-import net.sf.marineapi.nmea.sentence.MSU.SDSSentence;
+import net.sf.marineapi.nmea.sentence.SDSSentence;
 import net.sf.marineapi.nmea.sentence.SentenceId;
 import net.sf.marineapi.nmea.sentence.TalkerId;
 import net.sf.marineapi.nmea.util.MSU.*;
@@ -35,19 +33,19 @@ public class SDSParser extends SentenceParser implements SDSSentence {
 
 
     public SDSParser(String nmea) {
-        super(nmea, SentenceId.SDS.toString());
+        super(nmea, SentenceId.SDS);
     }
 
-    protected SDSParser(String nmea, String type) {
+    public SDSParser(String nmea, String type) {
         super(nmea, type);
     }
 
-    protected SDSParser(TalkerId talker) {
-        super(talker, SentenceId.SDS.toString(), 4);
+    public SDSParser(TalkerId talker) {
+        super(talker, SentenceId.SDS, 4);
     }
 
     public SDSParser() {
-        super(TalkerId.PM, SentenceId.SDS.toString(), 4);
+        super(TalkerId.PM, SentenceId.SDS, 4);
     }
 
 
