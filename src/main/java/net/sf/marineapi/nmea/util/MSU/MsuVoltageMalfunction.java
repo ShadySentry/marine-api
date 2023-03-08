@@ -6,7 +6,7 @@ package net.sf.marineapi.nmea.util.MSU;
  * <p>  •	1 – повышенное;
  * <p>  •	1 – пониженное;
  */
-public enum MsuVoltageMalfunction {
+public enum MsuVoltageMalfunction implements MsuMalfunction{
     NORMAL(0),
     HIGH(1),
     LOW(2);
@@ -39,5 +39,10 @@ public enum MsuVoltageMalfunction {
 
     public int toInt() {
         return value;
+    }
+
+    @Override
+    public boolean isNormal() {
+        return this==NORMAL;
     }
 }
