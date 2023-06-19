@@ -275,4 +275,12 @@ along with Java Marine API. If not, see <http://www.gnu.org/licenses />.
 <!--            </build>-->
 <!--        </profile>-->
 <!--    </profiles>-->
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub ShadySentry Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/ShadySentry/marine-api</url>
+        </repository>
+    </distributionManagement>
 </project>

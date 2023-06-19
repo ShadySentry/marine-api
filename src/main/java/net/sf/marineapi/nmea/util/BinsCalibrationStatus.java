@@ -64,7 +64,7 @@ public enum BinsCalibrationStatus {
             } else if (stringValue.equals("K")) {
                 converted = AUTOMATIC_CALIBRATION_IN_PROGRESS;
             } else {
-                converted= BinsCalibrationStatus.RESOLVE_IS_CALCULATED_WITHOUT_PROOF_OF_RELIABLE;
+                converted= BinsCalibrationStatus.RESOLVE_NOT_CALCULATED;
             }
             return converted;
         }
